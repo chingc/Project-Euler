@@ -1,6 +1,6 @@
 # Project Euler
 
-When I have nothing else to do I sometimes spend time trying to solve problems from [Project Euler][1].  This repository is where I keep my solutions.
+Sometimes when I have nothing else to do I try to solve the problems on [Project Euler][1].  I keep my solutions here.  Please try your best at solving them on your own before looking up the answers!
 
 
 
