@@ -1,7 +1,7 @@
 candidates = []
 for start in range(900, 0, -100):
-    for i in range(start, 1000):
-        for j in range(i, 1000):
+    for i in range(start, start + 100):
+        for j in range(i, start + 100):
             if str(i * j) == str(i * j)[::-1]:
                 candidates.append(i * j)
     if len(candidates) > 1:
