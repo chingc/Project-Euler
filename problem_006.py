@@ -1,3 +1,5 @@
+# http://projecteuler.net/problem=6
+
 def sum_of_squares(*nums):
     return sum(n * n for n in nums)
 

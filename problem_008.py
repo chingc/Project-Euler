@@ -1,3 +1,5 @@
+# http://projecteuler.net/problem=8
+
 with open("problem_008.input", "r") as f:
     big_number_str = "".join(line.strip() for line in f.readlines())
 

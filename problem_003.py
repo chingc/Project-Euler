@@ -1,3 +1,5 @@
+# http://projecteuler.net/problem=3
+
 def is_prime(n):
     """Determine if n is prime."""
     for i in range(2, int(n ** 0.5) + 1):

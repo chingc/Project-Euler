@@ -1,3 +1,5 @@
+# http://projecteuler.net/problem=4
+
 candidates = []
 for start in range(900, 0, -100):
     for i in range(start, start + 100):
