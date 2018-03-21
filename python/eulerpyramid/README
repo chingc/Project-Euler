@@ -1,0 +1,113 @@
+Description
+-----------
+An algorithm to solve Euler Project problem 18 and 67, plus a working
+implementation written in Python 3.1.
+
+http://projecteuler.net/index.php?section=problems&id=18
+http://projecteuler.net/index.php?section=problems&id=67
+
+
+
+
+Usage
+-----
+p = EulerPyramid(3)
+p.add_level([7, 4])
+p.add_level([2, 4, 6])
+p.add_level([8, 5, 9, 3])
+print(p.get_highest_path())
+
+p = EulerPyramid.build_pyramid("problem18.txt")
+print(p.get_highest_path())
+
+
+
+
+Algorithm
+---------
+This algorithm works on two levels at a time, regardless of pyramid size.  The
+top level represents paths determined from a previous iteration.  The bottom
+level is the current working level and represents new directions to take.
+
+1) Find all paths from the top level to nodes on the bottom level.  Certain
+   nodes are reachable by multiple paths.  If this is the case, we want to keep
+   the path that results in the highest cost and discard the rest.  The paths
+   found in this step becomes the top level for the next iteration.
+2) Add another level to the pyramid and repeat step 1.  The algorithm is done if
+   there are no more levels.  Calculate the cost of each path.  The desired path
+   is the one with the highest cost.
+
+Note: This algorithm finds more than just the highest path, it finds the highest
+path to any node in the pyramid.
+
+
+
+
+Example
+-------
+This is the four level pyramid from Project Euler.
+
+
+   3
+  7 4
+ 2 4 6
+8 5 9 3
+
+
+Top:      [3]
+Bottom:  7   4
+
+    Paths: [3 7] [3 4]
+
+
+Top:      [3 7] [3 4]
+Bottom:  2     4     6
+
+    Paths: [3 7 2] [3 7 4] [3 4 4] [3 4 6]
+
+    This part shows the number 4 node being reached by more than one path.  Each
+    node must have one and only one path.  Since we want to find the path with
+    the highest cost, eliminate the one that results in a lower cost.
+
+    Paths (revised): [3 7 2] [3 7 4] [3 4 6]
+
+    Notice how the number of paths is equal to the number of elements in the
+    current bottom level.
+
+
+Top:      [3 7 2] [3 7 4] [3 4 6]
+Bottom:  8       5       9       3
+
+    Paths (revised): [3 7 2 8] [3 7 4 5] [3 7 4 9] [3 4 6 3]
+
+    No more levels.  The largest path is [3 7 4 9] with a cost of 23.
+
+
+
+
+Complexity
+----------
+Quadratic O(n^2)
+
+Levels    Paths Checked    Total Paths
+1         0                2^0            root only
+2         2                2^1
+3         6                2^2
+4         12               2^3
+5         20               2^4
+6         30               2^5
+...       ...              ...
+14        182              2^13
+15        210              2^14           problem 18
+...       ...              ...
+99        9702             2^98
+100       9900             2^99           problem 67
+n         n * (n - 1)      2^(n - 1)
+
+
+
+
+Contact
+-------
+https://github.com/smwst/eulerpyramid
+smwst10@x.y | x = gmail, y = com
