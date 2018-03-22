@@ -13,11 +13,11 @@ def nth_prime(nth: int) -> int:
     return current
 
 
-def test_nth_prime() -> int:
+def test_nth_prime() -> None:
     """Expected: True"""
     primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
     for i, value in enumerate(primes):
-        assert nth_prime(i) == value
+        assert nth_prime(i + 1) == value
 
 def test_p007() -> None:
     """Expected: 104743"""
