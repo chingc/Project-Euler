@@ -4,7 +4,7 @@ from typing import Dict, List
 
 import pytest
 
-from p003 import prime_factors
+from test_003 import prime_factors
 
 
 def lcm(*nums: int) -> int:

@@ -1,6 +1,6 @@
 """https://projecteuler.net/problem=7"""
 
-from p003 import is_prime
+from test_003 import is_prime
 
 
 def nth_prime(nth: int) -> int:
