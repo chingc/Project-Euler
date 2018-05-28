@@ -5,18 +5,19 @@ from operator import mul
 from typing import List
 
 
-def adjacent_digits(num: int, path: str) -> List[str]:
-    """List of all adjacent digits of `num` length."""
+def adjacent_digits(n: int, path: str) -> List[str]:
+    """List of all adjacent digits of `n` length."""
     adjacents = []
     with open(path, "r") as lines:
         view = ""
         for line in lines:
             view += line.strip()
-            while len(view) >= num:
-                adjacents.append(view[:num])
+            while len(view) >= n:
+                adjacents.append(view[:n])
                 view = view[1:]
     return adjacents
 
+#####
 
 def test_adjacent_digits() -> None:
     """Expected: 5832"""

@@ -5,34 +5,35 @@ from typing import List
 import pytest
 
 
-def is_prime(num: int) -> bool:
-    """Determine if `num` is prime."""
-    if num < 2 or str(num)[-1] in [0, 2, 4, 5, 6, 8]:
+def is_prime(n: int) -> bool:
+    """Determine if `n` is prime."""
+    if n < 2 or str(n)[-1] in [0, 2, 4, 5, 6, 8]:
         return False
-    for divisor in range(2, int(num ** 0.5) + 1):  # sqrt(num)
-        if num % divisor == 0:
+    for divisor in range(2, int(n ** 0.5) + 1):  # n ** 0.5 == sqrt(n)
+        if n % divisor == 0:
             return False
     return True
 
-def prime_factors(num: int) -> List[int]:
-    """Prime factors of `num` in ascending order."""
-    if num < 2:
+def prime_factors(n: int) -> List[int]:
+    """Prime factors of `n` in ascending order."""
+    if n < 2:
         return []
-    if is_prime(num):
-        return [num]
+    if is_prime(n):
+        return [n]
     divisor, factors = 2, []
     while True:
-        quotient, remainder = divmod(num, divisor)
+        quotient, remainder = divmod(n, divisor)
         if remainder:
             divisor += 1
         else:
             factors.append(divisor)
-            num = quotient
-            if is_prime(num):
-                factors.append(num)
+            n = quotient
+            if is_prime(n):
+                factors.append(n)
                 break
     return factors
 
+#####
 
 @pytest.mark.parametrize("num", [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])
 def test_is_prime(num: int) -> None:

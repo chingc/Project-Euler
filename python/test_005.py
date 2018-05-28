@@ -21,6 +21,7 @@ def lcm(*nums: int) -> int:
         ans *= factor ** degree
     return ans
 
+#####
 
 @pytest.mark.parametrize("nums, ans", [
     ([2, 5], 10),

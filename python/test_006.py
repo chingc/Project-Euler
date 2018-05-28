@@ -9,6 +9,7 @@ def square_of_sums(*nums: int) -> int:
     """Square of the sum of `nums`."""
     return sum(nums) ** 2
 
+#####
 
 def test_sum_of_squares() -> None:
     """Expected: 385"""

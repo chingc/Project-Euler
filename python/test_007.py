@@ -4,7 +4,7 @@ from test_003 import is_prime
 
 
 def nth_prime(nth: int) -> int:
-    """Determine the nth prime."""
+    """Determine the `nth` prime."""
     current = 0
     while nth > 0:
         current += 1
@@ -12,6 +12,7 @@ def nth_prime(nth: int) -> int:
             nth -= 1
     return current
 
+#####
 
 def test_nth_prime() -> None:
     """Expected: True"""

@@ -7,9 +7,10 @@ def fibo(nth: int) -> List[int]:
     """Fibonacci numbers up to the `nth` term starting with 0 and 1."""
     fibos = [0, 1]
     for _ in range(nth - 2):  # - 2 because we already have the first two
-        fibos.append(fibos[-2] + fibos[-1])
+        fibos.append(fibos[-1] + fibos[-2])
     return fibos
 
+#####
 
 def test_fibo() -> None:
     """Expected: 10 Fibonacci numbers"""
