@@ -9,7 +9,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: pip-cache-20180619.0-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: pip-cache-2018.1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
 
       - run:
           name: Install Dependencies
@@ -18,7 +18,7 @@ jobs:
             PIPENV_VENV_IN_PROJECT: 1
 
       - save_cache:
-          key: pip-cache-20180619.0-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: pip-cache-2018.1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
             - .venv
 
@@ -31,19 +31,17 @@ jobs:
           command: pipenv run codecov
           when: always
 
-      # pytest does not yet have library stubs and also fails --strict mode
-      # - run:
-      #     name: Mypy
-      #     command: pipenv run mypy --strict python
-      #     working_directory: src
-      #     when: always
+      - run:
+          name: Mypy
+          command: pipenv run mypy --strict python
+          when: always
 
       - run:
           name: Pylint
           # C0103: invalid-name
           # C0301: line-too-long
           command: |
-            pipenv run pylint -d C0103,C0301 python/*.py
+            pipenv run pylint -d C0103,C0301 python
           when: always
 
       - store_test_results:

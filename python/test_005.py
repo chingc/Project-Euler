@@ -2,7 +2,7 @@
 
 from typing import Dict, List
 
-import pytest
+import pytest  # type: ignore
 
 from test_003 import prime_factors
 
@@ -23,7 +23,7 @@ def lcm(*nums: int) -> int:
 
 #####
 
-@pytest.mark.parametrize("nums, ans", [
+@pytest.mark.parametrize("nums, ans", [  # type: ignore
     ([2, 5], 10),
     ([6, 21], 42),
     ([48, 180], 720),

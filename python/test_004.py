@@ -1,6 +1,6 @@
 """https://projecteuler.net/problem=4"""
 
-import pytest
+import pytest  # type: ignore
 
 
 def is_palindrome(s: str) -> bool:
@@ -20,7 +20,7 @@ def largest_palindrome(n: int) -> int:
 
 #####
 
-@pytest.mark.parametrize("word", ["anna", "civic", "kayak", "madam", "wow", "9009", "1234321"])
+@pytest.mark.parametrize("word", ["anna", "civic", "kayak", "madam", "wow", "9009", "1234321"])  # type: ignore
 def test_is_palindrome(word: str) -> None:
     """Expected: True"""
     assert is_palindrome(word)

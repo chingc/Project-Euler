@@ -2,7 +2,7 @@
 
 from typing import List
 
-import pytest
+import pytest  # type: ignore
 
 
 def is_prime(n: int) -> bool:
@@ -35,12 +35,12 @@ def prime_factors(n: int) -> List[int]:
 
 #####
 
-@pytest.mark.parametrize("num", [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])
+@pytest.mark.parametrize("num", [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])  # type: ignore
 def test_is_prime(num: int) -> None:
     """Expected: True"""
     assert is_prime(num)
 
-@pytest.mark.parametrize("num, factors", [
+@pytest.mark.parametrize("num, factors", [  # type: ignore
     (22, [2, 11]),
     (333, [3, 3, 37]),
     (4444, [2, 2, 11, 101]),
