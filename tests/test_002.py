@@ -1,16 +1,7 @@
 """https://projecteuler.net/problem=2"""
 
-from typing import List
+from euler.problem_002 import fibo
 
-
-def fibo(nth: int) -> List[int]:
-    """Fibonacci numbers up to the `nth` term starting with 0 and 1."""
-    fibos = [0, 1]
-    for _ in range(nth - 2):  # - 2 because we already have the first two
-        fibos.append(fibos[-1] + fibos[-2])
-    return fibos
-
-#####
 
 def test_fibo() -> None:
     """Expected: 10 Fibonacci numbers"""
@@ -18,7 +9,7 @@ def test_fibo() -> None:
     assert len(fibos) == 10
     assert fibos == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-def test_p002() -> None:
+def test_002() -> None:
     """Expected: 4613732"""
     assert fibo(34)[-1] < 4_000_000
     assert fibo(35)[-1] > 4_000_000

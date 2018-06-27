@@ -1,5 +1,5 @@
 # Project Euler
 
-[![CircleCI](https://circleci.com/gh/chingc/Project-Euler.svg?style=shield)](https://circleci.com/gh/chingc/Project-Euler) [![codecov](https://codecov.io/gh/chingc/Project-Euler/branch/master/graph/badge.svg)](https://codecov.io/gh/chingc/Project-Euler) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![CircleCI](https://circleci.com/gh/chingc/euler-python.svg?style=shield)](https://circleci.com/gh/chingc/euler-python) [![codecov](https://codecov.io/gh/chingc/euler-python/branch/master/graph/badge.svg)](https://codecov.io/gh/chingc/euler-python) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-Spoilers!
+Solutions written in Python.

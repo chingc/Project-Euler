@@ -33,7 +33,9 @@ jobs:
 
       - run:
           name: Mypy
-          command: pipenv run mypy --strict python
+          command: |
+            pipenv run mypy --strict euler
+            pipenv run mypy --ignore-missing-imports --strict tests
           when: always
 
       - run:
@@ -41,7 +43,8 @@ jobs:
           # C0103: invalid-name
           # C0301: line-too-long
           command: |
-            pipenv run pylint -d C0103,C0301 python
+            pipenv run pylint -d C0103 euler
+            pipenv run pylint -d C0103,C0301 tests
           when: always
 
       - store_test_results:
