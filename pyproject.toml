@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "euler"
+version = "0.1.0"
+description = "Project Euler solutions in Python."
+authors = ["Ching Chow <ching.chow.sc@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+codecov = "^2.0"
+mypy = "^0.620.0"
+pylint = "^2.0"
+pytest = "^3.0"
+rope = "^0.10.7"
