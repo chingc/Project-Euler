@@ -1,12 +1,7 @@
 """https://projecteuler.net/problem=9"""
 
-from euler.problem_009 import pythagorean_triples
+from euler.main import pythagorean_triples
 
-
-def test_pythagorean_triples() -> None:
-    """Expected: True"""
-    for a, b, c in pythagorean_triples(100):
-        assert a * a + b * b == c * c
 
 def test_009() -> None:
     """Expected: 31875000"""

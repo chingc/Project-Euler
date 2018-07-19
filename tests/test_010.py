@@ -1,6 +1,6 @@
 """https://projecteuler.net/problem=10"""
 
-from euler.problem_003 import is_prime
+from euler.main import is_prime
 
 
 def test_010() -> None:
