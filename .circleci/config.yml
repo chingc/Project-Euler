@@ -79,8 +79,8 @@ jobs:
           name: Mypy
           command: |
             source .venv/bin/activate
-            poetry run mypy --ignore-missing-imports --strict euler
-            poetry run mypy --ignore-missing-imports --strict tests
+            poetry run mypy --ignore-missing-imports --strict --allow-untyped-decorators euler
+            poetry run mypy --ignore-missing-imports --strict --allow-untyped-decorators tests
 
       - run:
           name: Pylint

@@ -23,12 +23,12 @@ def test_fibo() -> None:
     assert len(fibos) == 10
     assert fibos == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-@pytest.mark.parametrize("word", ["anna", "civic", "kayak", "madam", "wow", "9009", "1234321"])  # type: ignore
+@pytest.mark.parametrize("word", ["anna", "civic", "kayak", "madam", "wow", "9009", "1234321"])
 def test_is_palindrome(word: str) -> None:
     """Expected: True"""
     assert is_palindrome(word)
 
-@pytest.mark.parametrize("num", [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])  # type: ignore
+@pytest.mark.parametrize("num", [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])
 def test_is_prime(num: int) -> None:
     """Expected: True"""
     assert is_prime(num)
@@ -37,7 +37,7 @@ def test_largest_palindrome() -> None:
     """Expected: 9009"""
     assert largest_palindrome(2) == 9009
 
-@pytest.mark.parametrize("nums, ans", [  # type: ignore
+@pytest.mark.parametrize("nums, ans", [
     ([2, 5], 10),
     ([6, 21], 42),
     ([48, 180], 720),
@@ -54,7 +54,7 @@ def test_nth_prime() -> None:
     for i, value in enumerate(primes):
         assert nth_prime(i + 1) == value
 
-@pytest.mark.parametrize("num, factors", [  # type: ignore
+@pytest.mark.parametrize("num, factors", [
     (22, [2, 11]),
     (333, [3, 3, 37]),
     (4444, [2, 2, 11, 101]),
